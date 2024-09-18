@@ -1,0 +1,39 @@
+<% var hexober = config.hexober %>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <% if (config.logo) { %>
+        <link rel="icon" href="<%= url_for(config.logo) %>" type="image/*">
+    <% } %>
+
+    <% if (hexober.googleSiteVerification) { %>
+        <meta name="google-site-verification" content="<%= hexober.googleSiteVerification %>" />
+    <% } %>
+    
+    <title>
+        <%= config.title %>
+    </title>
+    
+    <script src="<%= url_for('js/sober.min.js') %>"></script>
+    <script src="<%= url_for('js/color-thief.umd.js') %>"></script>
+    <script src="<%= url_for('js/layout.js') %>"></script>
+
+    <% if (hexober.googleAnalytics) { %>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%= hexober.googleAnalytics %>"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+      
+          gtag('config', '<%= hexober.googleAnalytics %>');
+        </script>
+    <% } %>
+
+    <link rel="stylesheet" href="<%= url_for('css/layout.css') %>">
+
+    <link rel="stylesheet" href="<%= url_for('css/github-markdown.min.css') %>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+
+</head>

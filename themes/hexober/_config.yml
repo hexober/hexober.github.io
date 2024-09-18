@@ -1,13 +1,3 @@
-# hexober.github.io
-A material design theme for Hexo based on soberJS
-
-```bash
-npm install hexo-prism-plugin --save
-```
-
-```yml
-logo: '/assets/logo.svg'
-
 syntax_highlighter: prismjs
 
 prism_plugin:
@@ -15,4 +5,8 @@ prism_plugin:
   theme: 'default'     # 使用 GitHub 风格的代码高亮主题
   line_number: false  # 是否显示行号
   custom_css: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css'
-```
+
+themeToggle:
+  light: /assets/ic-theme-light.svg
+  dark: /assets/ic-theme-dark.svg
+  auto: /assets/ic-theme-auto.svg

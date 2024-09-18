@@ -1,0 +1,41 @@
+<% var hexober = config.hexober; %>
+
+<% if (hexober.nav.author) { %>
+<div id="authorContainer" class="author-container">
+    <% if (hexober.nav.author.homepage) { %>
+    <a href="<%= hexober.nav.author.homepage %>" target="_blank">
+    <% } %>
+        <img id="authorAvatar" class="author-avatar" src="<%= hexober.nav.author.avatar %>" crossorigin="anonymous">
+    <% if (hexober.nav.author.homepage) { %>
+    </a>
+    <% } %>
+
+    <% if (hexober.nav.author.homepage) { %>
+    <a href="<%= hexober.nav.author.homepage %>" target="_blank" style="text-decoration: none; color: inherit;">
+    <% } %>
+        <b class="author-name"><%= hexober.nav.author.name %></b>
+    <% if (hexober.nav.author.homepage) { %>
+    </a>
+    <% } %>
+
+    <% if (hexober.nav.author.socials) { %>
+        <div class="author-social-container">
+            <% hexober.nav.author.socials.forEach(function(social) { %>
+                <% if (social.title) { %>
+                <s-tooltip>
+                <% } %>
+                    <s-icon-button slot="trigger" onclick="window.open('<%= social.url %>')">
+                        <s-icon>
+                            <%- read_svg(url_for(social.icon)) %>
+                        </s-icon>
+                    </s-icon-button>
+                <% if (social.title) { %>
+                <%= social.title %>    
+                </s-tooltip>
+                <% } %>
+            <% }); %>
+        </div>
+    <% } %>
+</div>
+<s-divider style="width: 100%; margin: 0px; padding: 0px;"></s-divider>
+<% } %>
