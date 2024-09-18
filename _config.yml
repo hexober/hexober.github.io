@@ -48,10 +48,10 @@ future: true
 # highlight:
 #   enable: true
 #   line_number: false
-#   auto_detect: false
+#   auto_detect: true
 #   tab_replace: ''
 #   wrap: true
-#   class_prefix: 'hljs-'
+
 # syntax_highlighter: prismjs
 # prismjs:
 #   enable: true
@@ -59,13 +59,13 @@ future: true
 #   line_number: false
 #   tab_replace: ''
 #   theme: 'github'
-
+highlight:
+  enable: false
 prism_plugin:
   mode: 'preprocess'  # 可以是 'preprocess' 或 'render'，推荐使用 'preprocess'
   enable: true
   theme: 'default'     # 使用 GitHub 风格的代码高亮主题
   line_number: false  # 是否显示行号
-  # custom_css: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css'
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
