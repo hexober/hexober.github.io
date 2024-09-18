@@ -20,9 +20,7 @@
     <script src="<%= url_for('js/color-thief.umd.js') %>"></script>
     <script src="<%= url_for('js/layout.js') %>"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
-
+    <script src="<%= url_for('js/prism.js') %>"></script>
 
     <% if (hexober.googleAnalytics) { %>
         <script async src="https://www.googletagmanager.com/gtag/js?id=<%= hexober.googleAnalytics %>"></script>
@@ -36,7 +34,7 @@
     <% } %>
 
     <link rel="stylesheet" href="<%= url_for('css/layout.css') %>">
-
     <link rel="stylesheet" href="<%= url_for('css/github-markdown.min.css') %>">
+    <link href="<%= url_for('css/prism.css') %>" rel="stylesheet">
 
 </head>
