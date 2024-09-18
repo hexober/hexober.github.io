@@ -44,28 +44,21 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
-# syntax_highlighter: highlight.js
-# highlight:
-#   enable: true
-#   line_number: false
-#   auto_detect: true
-#   tab_replace: ''
-#   wrap: true
 
-# syntax_highlighter: prismjs
-# prismjs:
+syntax_highlighter: prismjs
+prismjs:
+  preprocess: true
+  line_number: false
+  line_threshold: 0
+  tab_replace: ""
+
+# highlight:
+#   enable: false
+# prism_plugin:
+#   mode: 'preprocess'  # 可以是 'preprocess' 或 'render'，推荐使用 'preprocess'
 #   enable: true
-#   preprocess: true
-#   line_number: false
-#   tab_replace: ''
-#   theme: 'github'
-highlight:
-  enable: false
-prism_plugin:
-  mode: 'preprocess'  # 可以是 'preprocess' 或 'render'，推荐使用 'preprocess'
-  enable: true
-  theme: 'default'     # 使用 GitHub 风格的代码高亮主题
-  line_number: false  # 是否显示行号
+#   theme: 'default'     # 使用 GitHub 风格的代码高亮主题
+#   line_number: false  # 是否显示行号
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
