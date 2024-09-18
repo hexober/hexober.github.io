@@ -26,7 +26,9 @@ function onPageReady() {
     const mainPage = document.getElementById('mainPage')
     const themeToggleBtn = document.getElementById('themeToggleBtn')
     if (themeToggleBtn) {
+        const themeToggleBtnIcon = document.getElementById('themeToggleBtnIcon')
         const currentMode = sessionStorage.getItem('themeMode') || 'auto'
+        themeToggleBtnIcon.innerHTML = document.getElementById('theme-' + currentMode).innerHTML
         
         themeToggleBtn.onclick = () => {
             const currentMode = sessionStorage.getItem('themeMode') || 'auto'
@@ -44,6 +46,7 @@ function onPageReady() {
                     sessionStorage.setItem('themeMode', 'dark')
                     break
             }
+            themeToggleBtnIcon.innerHTML = document.getElementById('theme-' + (sessionStorage.getItem('themeMode') || 'auto')).innerHTML
         }
     }
 }
