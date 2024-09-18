@@ -51,6 +51,7 @@ prismjs:
   line_number: false
   line_threshold: 0
   tab_replace: ""
+  hljs: false
 
 # highlight:
 #   enable: false
