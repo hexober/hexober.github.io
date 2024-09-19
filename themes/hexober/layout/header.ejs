@@ -34,13 +34,15 @@
     <% } %>
     
     <% if (hexober.showThemeToggle != false) { %>
-    <s-tooltip slot="action">
+    <s-tooltip id="themeToggleTip" slot="action">
         <s-icon-button id="themeToggleBtn" slot="trigger">
             <s-icon id="themeToggleBtnIcon">
                 <%- read_svg(url_for(theme.themeToggle.auto), true) %>
             </s-icon>
         </s-icon-button>
-        Auto
+        <div id="themeToggleTipText">
+            Auto
+        </div>
     </s-tooltip>
     <% } %>
 </s-appbar>

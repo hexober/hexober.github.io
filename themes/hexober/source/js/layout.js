@@ -26,29 +26,60 @@ function onPageReady() {
     const mainPage = document.getElementById('mainPage')
     const themeToggleBtn = document.getElementById('themeToggleBtn')
     if (themeToggleBtn) {
+        const themeToggleTipText = document.getElementById('themeToggleTipText')
         const themeToggleBtnIcon = document.getElementById('themeToggleBtnIcon')
+
+        function setTheme(theme) {
+            mainPage.setAttribute('theme', theme)
+            sessionStorage.setItem('themeMode', theme)
+            themeToggleTipText.innerText = theme
+            themeToggleBtnIcon.innerHTML = document.getElementById('theme-' + theme).innerHTML
+        }
+
         const currentMode = sessionStorage.getItem('themeMode') || 'auto'
-        themeToggleBtnIcon.innerHTML = document.getElementById('theme-' + currentMode).innerHTML
+        setTheme(currentMode)
         
         themeToggleBtn.onclick = () => {
             const currentMode = sessionStorage.getItem('themeMode') || 'auto'
             switch(currentMode) {
                 case 'dark':
-                    mainPage.setAttribute('theme', 'light')
-                    sessionStorage.setItem('themeMode', 'light')
+                    setTheme('light')
                     break
                 case 'light':
-                    mainPage.setAttribute('theme', 'auto')
-                    sessionStorage.setItem('themeMode', 'auto')
+                    setTheme('auto')
                     break
                 case 'auto':
-                    mainPage.setAttribute('theme', 'dark')
-                    sessionStorage.setItem('themeMode', 'dark')
+                    setTheme('dark')
                     break
             }
-            themeToggleBtnIcon.innerHTML = document.getElementById('theme-' + (sessionStorage.getItem('themeMode') || 'auto')).innerHTML
         }
     }
+
+    manageTheme()
+}
+
+function manageTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    console.log('当前为深色模式');
+    } else {
+    console.log('当前为浅色模式');
+    }
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // 设置初始模式
+    function handleColorSchemeChange(event) {
+    if (event.matches) {
+        // 深色模式
+        console.log('切换到深色模式');
+    } else {
+        // 浅色模式
+        console.log('切换到浅色模式');
+    }
+    }
+
+    // 监听颜色模式的变化
+    mediaQuery.addEventListener('change', handleColorSchemeChange);
 }
 
 function gotoPage(page) {

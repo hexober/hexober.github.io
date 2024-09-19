@@ -137,7 +137,7 @@ hexober:
       icon: '/assets/ic-about.svg'
       url: '/about'
       
-  showThemeToggle: true
+  showThemeToggle: false
   # googleAnalytics: G-XXXXXXXXXX
   # googleSiteVerification: XXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
