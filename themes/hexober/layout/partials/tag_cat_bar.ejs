@@ -18,7 +18,7 @@
     <% } %>
 
     <% if (tags.length) { %>
-        <div style="margin-left: 16px;">
+        <div <% if(categories.length) { %> style="margin-left: 16px;" <% } %>>
             <s-icon style="width: 16px; height: 16px;">
                 <%- read_svg(url_for('assets/ic-tag.svg'), true) %>
             </s-icon>
