@@ -10,6 +10,8 @@ tags:
 <!-- more -->
 
 ## Configuration
+
+### Theme specify configurations
 ```yml
 theme: hexober
 hexober:
@@ -44,4 +46,15 @@ hexober:
   showThemeToggle: true
   # googleAnalytics: G-XXXXXXXXXX
   # googleSiteVerification: XXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+### Theme highlight
+```yml
+syntax_highlighter: prismjs
+prismjs:
+  preprocess: true
+  line_number: false
+  line_threshold: 0
+  tab_replace: ""
+  hljs: false
 ```

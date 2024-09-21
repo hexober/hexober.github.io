@@ -26,60 +26,33 @@ function onPageReady() {
     const mainPage = document.getElementById('mainPage')
     const themeToggleBtn = document.getElementById('themeToggleBtn')
     if (themeToggleBtn) {
-        const themeToggleTipText = document.getElementById('themeToggleTipText')
-        const themeToggleBtnIcon = document.getElementById('themeToggleBtnIcon')
-
-        function setTheme(theme) {
-            mainPage.setAttribute('theme', theme)
-            sessionStorage.setItem('themeMode', theme)
-            themeToggleTipText.innerText = theme
-            themeToggleBtnIcon.innerHTML = document.getElementById('theme-' + theme).innerHTML
-        }
-
-        const currentMode = sessionStorage.getItem('themeMode') || 'auto'
-        setTheme(currentMode)
-        
-        themeToggleBtn.onclick = () => {
-            const currentMode = sessionStorage.getItem('themeMode') || 'auto'
-            switch(currentMode) {
-                case 'dark':
-                    setTheme('light')
-                    break
-                case 'light':
-                    setTheme('auto')
-                    break
-                case 'auto':
-                    setTheme('dark')
-                    break
-            }
-        }
+        // TODO
     }
 
     manageTheme()
 }
 
 function manageTheme() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    console.log('当前为深色模式');
-    } else {
-    console.log('当前为浅色模式');
+    function loadTheme() {
+        const theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+        console.log('loadTheme theme=', theme)
+        switch (theme) {
+            case 'dark':
+                document.getElementById('theme-light').disabled = true;
+                document.getElementById('theme-dark').disabled = false;
+                break
+            default:
+                document.getElementById('theme-dark').disabled = true;
+                document.getElementById('theme-light').disabled = false;
+                break
+        }
     }
+    
+    // 页面加载时检测并加载合适的主题
+    window.addEventListener('load', loadTheme);
 
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // 设置初始模式
-    function handleColorSchemeChange(event) {
-    if (event.matches) {
-        // 深色模式
-        console.log('切换到深色模式');
-    } else {
-        // 浅色模式
-        console.log('切换到浅色模式');
-    }
-    }
-
-    // 监听颜色模式的变化
-    mediaQuery.addEventListener('change', handleColorSchemeChange);
+    // 如果用户在浏览器中切换主题模式，自动切换CSS
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', loadTheme);
 }
 
 function gotoPage(page) {
