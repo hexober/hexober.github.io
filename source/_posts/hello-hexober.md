@@ -1,6 +1,6 @@
 ---
 title: Hello Hexober
-date: 2024-09-14
+date: 2024-09-22
 tags:
     - Hexober
     - Hexo

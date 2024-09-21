@@ -124,3 +124,21 @@ article .markdown-body {
   justify-content: space-between; /* 两端对齐 */
   align-items: center; /* 垂直居中（可选） */
 }
+
+.gallery2-3 {
+  display: grid;
+  grid-template-columns: 128px 128px 128px; /* 3列，宽度分别为 128px, 128px, 128px */
+  gap: 8px 8px; /* 网格之间的间距 */
+}
+
+.gallery4 {
+  display: grid;
+  grid-template-columns: 100px 100px; /* 2列，宽度分别为 100px, 100px */
+  gap: 8px 8px; /* 网格之间的间距 */
+}
+
+.galleryMore {
+  display: grid;
+  grid-template-columns: 100px 100px 100px; /* 2列，宽度分别为 100px, 100px */
+  gap: 8px 8px; /* 网格之间的间距 */
+}
