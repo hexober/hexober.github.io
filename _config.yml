@@ -149,3 +149,7 @@ excerpt:
   enable: true
   depth: 1  # 解析多少层的 Markdown 标题
   length: 150  # 摘要的最大字数
+
+hexo_auto_photos:
+  enable: true
+  max: 9

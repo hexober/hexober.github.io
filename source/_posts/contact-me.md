@@ -5,9 +5,6 @@ tags:
     - WeChat
     - X
     - Github
-photos:
-    - images/wechat-qr-code.png
-    - https://avatars.githubusercontent.com/u/6696502?v=4
 ---
 
 You can contact me through the following ways.
