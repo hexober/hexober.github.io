@@ -143,6 +143,7 @@ hexober:
   showThemeToggle: false
   # googleAnalytics: G-XXXXXXXXXX
   # googleSiteVerification: XXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  # bingSiteVerification: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 excerpt:

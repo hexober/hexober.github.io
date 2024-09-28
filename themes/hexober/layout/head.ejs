@@ -11,6 +11,9 @@
     <% if (hexober.googleSiteVerification) { %>
         <meta name="google-site-verification" content="<%= hexober.googleSiteVerification %>" />
     <% } %>
+    <% if (hexober.bingSiteVerification) { %>
+        <meta name="msvalidate.01" content="<%= hexober.bingSiteVerification %>" />
+    <% } %>
     
     <title>
         <%= config.title %>
