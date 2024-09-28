@@ -1,6 +1,5 @@
 ---
 title: Photos Support
-date: 2024-09-21
 tags:
     - Hexober
     - Hexo

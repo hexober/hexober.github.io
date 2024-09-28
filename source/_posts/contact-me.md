@@ -1,6 +1,5 @@
 ---
 title: Contact me
-date: 2024-09-21 17:17:12
 tags:
     - WeChat
     - X

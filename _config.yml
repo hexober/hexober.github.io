@@ -153,3 +153,7 @@ excerpt:
 hexo_auto_photos:
   enable: true
   max: 9
+
+hexo_auto_time:
+  enable: true  # 启用插件，默认为 true
+  strategy: ctime  # 使用 'ctime' 或 'mtime'，默认为 'ctime'
